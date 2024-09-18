@@ -1,0 +1,16 @@
+@if(showAddTaskModal) {
+<app-task-modal [user]="user" (close)="onModalClose($event)"></app-task-modal>
+}
+<section>
+  <header>
+    <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+    <button (click)="addTask()">Add task</button>
+  </header>
+  <ul>
+    @for(task of selectedUserTasks; track task.id) {
+    <li>
+      <app-task [task]="task" (complete)="onCompleteTask($event)" />
+    </li>
+    }
+  </ul>
+</section>

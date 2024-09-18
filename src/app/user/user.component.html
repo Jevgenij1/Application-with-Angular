@@ -1,0 +1,16 @@
+<div class="users">
+  <button
+    class="users--button"
+    [class.active]="isUserSelected"
+    (click)="onSelectUser()"
+  >
+    @if (user.userAvatar) {
+    <img [src]="user.userAvatar" alt="" />
+    } @else {
+    <div class="users--avatar-placeholder">
+      {{ user.firstName[0] }}{{ user.lastName[0] }}
+    </div>
+    }
+    <span>{{ user.firstName }} {{ user.lastName }}</span>
+  </button>
+</div>

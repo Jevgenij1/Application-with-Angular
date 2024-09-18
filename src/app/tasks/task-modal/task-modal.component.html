@@ -1,0 +1,32 @@
+<section>
+  <header>
+    <p>Add task for {{ user.firstName }} {{ user.lastName }}</p>
+  </header>
+  <menu>
+    <form class="task-form" [formGroup]="taskFrom">
+      <label for="title">Title</label>
+      <input id="title" type="text" name="title" formControlName="taskTitle" />
+
+      <label for="summary">Summary</label>
+      <textarea
+        id="summary"
+        type="textarea"
+        name="summary"
+        formControlName="taskSummary"
+      ></textarea>
+
+      <label for="due-date">Due date</label>
+      <input
+        id="due-date"
+        type="date"
+        name="due-date"
+        formControlName="taskDueDate"
+      />
+    </form>
+  </menu>
+  <footer>
+    <button class="close-btn" (click)="onModalClose()">Close</button>
+    <button class="create-btn" (click)="onAddTask()">Create</button>
+  </footer>
+</section>
+<div class="backdrop"></div>
